@@ -1,0 +1,123 @@
+{
+   "customGroups": [
+      {
+         "resourceKind": "vRA-Environment",
+         "membershipDefinition": {"ruleGroups": [
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vCAC Tenant-Deployment-VM View-VCACAdapter-TENANT",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "corporation.local"
+                  },
+                  {
+                     "ruleType": "StringMetricPropertyRule",
+                     "ruleMetricKey": "config|guestFullName",
+                     "isProperty": true,
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "Linux"
+                  }
+               ]
+            },
+            {
+               "resourceKind": "VirtualMachine",
+               "adapterKind": "VMWARE",
+               "rules": [
+                  {
+                     "ruleTravesalSpec": "vCAC Tenant-Deployment-VM View-VCACAdapter-TENANT",
+                     "ruleRelationshipType": "DESCENDANT",
+                     "ruleType": "RelationshipRule",
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "corporation.local"
+                  },
+                  {
+                     "ruleType": "StringMetricPropertyRule",
+                     "ruleMetricKey": "config|guestFullName",
+                     "isProperty": true,
+                     "ruleStringOperator": "CONTAINS",
+                     "ruleStringValue": "CentOs"
+                  }
+               ]
+            }
+         ]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "corporation-Tenant-Linux",
+         "started": true
+      },
+      {
+         "resourceKind": "vRA-Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "VirtualMachine",
+            "adapterKind": "VMWARE",
+            "rules": [
+               {
+                  "ruleTravesalSpec": "vCAC Tenant-Deployment-VM View-VCACAdapter-TENANT",
+                  "ruleRelationshipType": "DESCENDANT",
+                  "ruleType": "RelationshipRule",
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "corporation.local"
+               },
+               {
+                  "ruleType": "StringMetricPropertyRule",
+                  "ruleMetricKey": "config|guestFullName",
+                  "isProperty": true,
+                  "ruleStringOperator": "CONTAINS",
+                  "ruleStringValue": "Windows"
+               }
+            ]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "corporation-Tenant-Windows",
+         "started": true
+      },
+      {
+         "resourceKind": "vRA-Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "DEPLOYMENT",
+            "adapterKind": "VCACAdapter",
+            "rules": [{
+               "ruleTravesalSpec": "vCAC Tenant-Deployment-VM View-VCACAdapter-TENANT",
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "corporation.local"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "corporation-Deployments",
+         "started": true
+      },
+      {
+         "resourceKind": "vRA-Environment",
+         "membershipDefinition": {"ruleGroups": [{
+            "resourceKind": "BLUEPRINT",
+            "adapterKind": "VCACAdapter",
+            "rules": [{
+               "ruleTravesalSpec": "vCAC Tenant-Blueprint View-VCACAdapter-TENANT",
+               "ruleRelationshipType": "DESCENDANT",
+               "ruleType": "RelationshipRule",
+               "ruleStringOperator": "CONTAINS",
+               "ruleStringValue": "corporation.local"
+            }]
+         }]},
+         "adapterKind": "Container",
+         "autoResolveMembership": true,
+         "name": "corporation-Blueprints",
+         "started": true
+      }
+   ],
+   "customGroupTypes": [{
+      "resourceKind": "vRA-Environment",
+      "localization": [{
+         "resourceKindName": "vRA-Environment",
+         "locale": "en"
+      }]
+   }]
+}
